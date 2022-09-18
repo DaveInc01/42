@@ -19,5 +19,5 @@ int main(int ac, char ** argv)
                 kill(pid, SIGUSR2);
         }
         i++;
-    }
+    }          
 }
