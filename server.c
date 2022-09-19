@@ -7,11 +7,29 @@ char c = 0x00;
 void handler(int sig)
 {
     //printf("%d\n", sig);
+    static int c;
+    static int i;
+
+    c = 0;
     if(sig == SIGUSR1)
-        printf("1\n");
+    {
+        printf("1");
+        c = ((c << i) | 1);
+    }
     else
-        printf("0\n");
-} 
+    {
+        printf("0");
+        c = ((c << i) | 0);
+    }   
+    if (++i == 8)
+    {
+        printf("8 bits\n");
+        printf("%d", c);
+        write(1, &c, 1);
+        c = 0;
+        i = 0;
+    }
+}
 
 int main()
 {
