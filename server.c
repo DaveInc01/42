@@ -17,9 +17,7 @@ static void handler(int sig, siginfo_t *info, void *context)
         i = 0;
     }
 	else
-	{
 		c <<= 1;
-	}
 }
 
 int main()

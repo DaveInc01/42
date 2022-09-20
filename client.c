@@ -5,12 +5,12 @@
 
 int main(int ac, char ** argv)
 {
-    int pid = atoi(argv[1]);
-    char *str;
+    int     pid = atoi(argv[1]);
+    char    *str;
+    int     j;
 
     str = argv[2];
     int i = 0;
-    int j;
 
     while (str[i] != '\0')
     {
